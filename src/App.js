@@ -11,9 +11,9 @@ function App() {
       .then(res => res.json())
       .then(data => {
         setCountries(data);
-        console.log(data);
+        // console.log(data);
         const names = data.map(country => country.name)
-        console.log(names);
+        // console.log(names);
       })
   }, [])
   return (
@@ -21,7 +21,7 @@ function App() {
       <h1>Country Loaded: {countries.length}</h1>
       <ul>
         {
-          countries.map(country => <Country name={country.name}></Country>)
+          countries.map(country => <Country key={country.alpha3Code} country={country}></Country>)
         }
       </ul>
     </div>
