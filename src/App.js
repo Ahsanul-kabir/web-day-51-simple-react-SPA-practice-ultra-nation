@@ -16,12 +16,18 @@ function App() {
         // console.log(names);
       })
   }, [])
+
+  const handleAddCountry = (country)=>{
+    console.log('added',country)
+  }
+
   return (
     <div >
       <h1>Country Loaded: {countries.length}</h1>
+      <h4>Country Added: </h4>
       <ul>
         {
-          countries.map(country => <Country key={country.alpha3Code} country={country}></Country>)
+          countries.map(country => <Country key={country.alpha3Code} country={country} handleAddCountry={handleAddCountry}></Country>)
         }
       </ul>
     </div>
